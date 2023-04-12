@@ -9,3 +9,11 @@ class Item(models.Model):
     name = models.CharField(max_length=255)
 
     history = HistoricalRecords()
+
+
+class InstagramAccount(models.Model):
+    id = TimeflakePrimaryKeyBinary()
+    username = models.CharField(max_length=255)
+    password = models.CharField(max_length=255)
+
+    history = HistoricalRecords()
