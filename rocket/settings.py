@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     # Third party apps
     'rest_framework',
     'corsheaders',
+    'behaviors.apps.BehaviorsConfig',
     'simple_history',
 ]
 

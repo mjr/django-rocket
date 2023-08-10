@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="px-6 py-4">
+      <h1 class="text-3xl font-bold">
+        Resultado
+      </h1>
+      <table class="divide-y divide-gray-300">
+        <thead>
+          <tr>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+              <span class="sr-only">Posição</span>
+            </th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+              <span class="sr-only">Milhar</span>
+            </th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+              <span class="sr-only">Animal</span>
+            </th>
+            <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-0">
+              <span class="sr-only">Dezena</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {% for item in result %}
+            <tr>
+              <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">{{ item.position }}</td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ item.thousand }}</td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ item.animal|title }}</td>
+              <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ item.decimal }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
